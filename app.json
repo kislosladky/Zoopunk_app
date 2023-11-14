@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Zoopunk_app",
+    "slug": "Zoopunk_app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/Loading.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#CADFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/MainBackground.png",
+        "backgroundColor": "#f1dcc6"
+      }
+    },
+    "web": {
+      "favicon": "./assets/Icon.png"
+    }
+  }
+}
