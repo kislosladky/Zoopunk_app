@@ -16,7 +16,7 @@ export default function UserMainScreen({navigation}) {
         </TitleBar>
         <Subtitle>Викторины</Subtitle>
         <View style={{flexDirection: "row"}}>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <Pressable onPress={() => navigation.navigate("MapScreen")}>
               <Card img={require("../../assets/ButtonMountains.png")} title = {"Как хорошо ты знаешь капибар?"}  />
             </Pressable>
@@ -27,7 +27,7 @@ export default function UserMainScreen({navigation}) {
         </View>
         <Subtitle>Достижения</Subtitle>
         <View style={{flexDirection: "row"}}>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <Card img={require("../../assets/ButtonMountains.png")} title = {"Стажер Орнитолог"}/>
             <Card img={require("../../assets/ButtonMountains.png")} title = {"Опытный Орнитолог"}/>
             <Card img={require("../../assets/ButtonMountains.png")} title = {"Капибарин"}/>
@@ -35,7 +35,7 @@ export default function UserMainScreen({navigation}) {
         </View>
         <Subtitle>Лист посещения</Subtitle>
         <View style={{flexDirection: "row"}}>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <Card img={require("../../assets/ButtonMountains.png")} title = {"Как хорошо ты знаешь капибар?"}/>
             <Card img={require("../../assets/ButtonMountains.png")} title = {"Как хорошо ты знаешь капибар?"}/>
             <Card img={require("../../assets/ButtonMountains.png")} title = {"Как хорошо ты знаешь капибар?"}/>
