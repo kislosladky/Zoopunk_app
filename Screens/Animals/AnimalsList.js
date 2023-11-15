@@ -1,62 +1,113 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, ImageBackground } from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+  ImageBackground
+} from 'react-native';
 
 const DATA = [
+
   {
-    title: 'Животные Северной Америки',
-    data: ['Pizza', 'Burger', 'Risotto'],
+    img: "../../assets/Tur.jpeg",
+    title: 'Дагестанский хуй 1',
+    bg: "#b87979",
   },
   {
-    title: 'Животные Азии',
-    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Дагестанский хуй 2',
+    bg: '#85e781',
+    img: "../../assets/Tur.jpeg",
   },
   {
-    title: 'Фантастические твари',
-    data: ['Дагестанский тур', 'Coke', 'Beer'],
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Дагестанский хуй 3',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
   },
   {
-    title: 'Капибары',
-    data: ['Илья', 'Саня'],
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'Дагестанский хуй 4',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Хуй',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Хуй1',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
+  },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'Хуй2',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Хуй3',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Капибара',
+    bg: '#b87979',
+    img: "../../assets/Tur.jpeg",
   },
 ];
 
-const AnimalsList = ({navigation}) => (
-  <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%"}}>
+const AnimalsList = ({navigation}) => {
+  return (
     <SafeAreaView style={styles.container}>
-      <SectionList
-        sections={DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({item}) => (
-          <View style={styles.item}>
-            <Text style={styles.title}>{item}</Text>
-          </View>
-        )}
-        renderSectionHeader={({section: {title}}) => (
-          <Text style={styles.header}>{title}</Text>
-        )}
-      />
+      <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
+        <FlatList
+          data={DATA}
+          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => <Card bg = {item.bg} title = {item.title} img={require("../../assets/Tur.jpeg") } navigation={this.navigation}/>}//<Item title={item.title} />}
+          keyExtractor={item => item.id}
+          contentContainerStyle={{alignItems: "center"}}
+        />
+      </ImageBackground>
     </SafeAreaView>
-  </ImageBackground>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 16,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-  },
-  header: {
-    fontSize: 32,
-    backgroundColor: '#fff',
+    marginTop: 0,
+    alignItems: "center"
   },
   title: {
-    fontSize: 24,
+    fontSize: 32,
   },
 });
 
 export default AnimalsList;
+
+
+
+const Card = (props) => (
+  <View style={{width: "45%", height: 200, backgroundColor: props.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
+    <Image source={props.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
+    {/*<TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")}>*/}
+    <TouchableOpacity style={{backgroundColor: "#fff"}}>
+      <Text style={{fontFamily: 'monserratLight'}}>{props.title}</Text>
+    </TouchableOpacity>
+  </View>
+)
+
+

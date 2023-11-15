@@ -29,11 +29,10 @@ function HomeScreen() {
 }
 
 
-function Navigation(props) {
+function Navigation() {
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/*<Stack.Screen name="Welcome" component={WelcomePage}/>*/}
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         <Stack.Screen name="Map" component={MapScreen}/>
         <Stack.Screen name="User" component={UserMainScreen}/>
