@@ -5,6 +5,7 @@ const Quizes = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Квиз1',
+    img: require("../../assets/ButtonMountains.png")
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
@@ -50,7 +51,9 @@ const Paths = [
 
 const Item = (props) => (
   <View style={{height: 170, width: 270, backgroundColor: "#c9f1d5", margin: 10, borderRadius: 20}}>
+    <ImageBackground source={props.img} style={{width: 270, height: 170}}>
     <Text>{props.title}</Text>
+    </ImageBackground>
   </View>
 );
 
@@ -66,7 +69,7 @@ function UserMainScreen({navigation})  {
           <FlatList
             data={Quizes}
             alwaysBounceHorizontal={true}
-            renderItem={({item}) => <Item title={item.title} />}
+            renderItem={({item}) => <Item title={item.title} img = {item.img}/>}
             keyExtractor={item => item.id}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}

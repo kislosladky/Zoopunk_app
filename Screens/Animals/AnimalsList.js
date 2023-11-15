@@ -12,9 +12,8 @@ import {
 } from 'react-native';
 
 const DATA = [
-
   {
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
     title: 'Дагестанский хуй 1',
     bg: "#b87979",
   },
@@ -76,7 +75,7 @@ const AnimalsList = ({navigation}) => {
           data={DATA}
           numColumns={2}
           showsVerticalScrollIndicator={false}
-          renderItem={({item}) => <Card bg = {item.bg} title = {item.title} img={require("../../assets/Tur.jpeg") } navigation={this.navigation}/>}//<Item title={item.title} />}
+          renderItem={({item}) => <Card bg = {item.bg} title = {item.title} img={item.img} navigation={this.navigation}/>}//<Item title={item.title} />}
           keyExtractor={item => item.id}
           contentContainerStyle={{alignItems: "center"}}
         />
