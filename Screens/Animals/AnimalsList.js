@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, ImageBackground } from 'react-native';
-
 const DATA = [
   {
     title: 'Животные Северной Америки',
@@ -20,7 +19,11 @@ const DATA = [
   },
 ];
 
-const AnimalsList = ({navigation}) => (
+export default function AnimalsList ({navigation}){
+    const loadCurrentAnimal = () => {
+      navigation.navigate('CurrentAnimal');
+    }
+    return(
   <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%"}}>
     <SafeAreaView style={styles.container}>
       <SectionList
@@ -28,7 +31,7 @@ const AnimalsList = ({navigation}) => (
         keyExtractor={(item, index) => item + index}
         renderItem={({item}) => (
           <View style={styles.item}>
-            <Text style={styles.title}>{item}</Text>
+            <Text style={styles.title} onPress={loadCurrentAnimal}>{item}</Text>
           </View>
         )}
         renderSectionHeader={({section: {title}}) => (
@@ -37,7 +40,8 @@ const AnimalsList = ({navigation}) => (
       />
     </SafeAreaView>
   </ImageBackground>
-);
+    );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -58,5 +62,3 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
-
-export default AnimalsList;
