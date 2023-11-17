@@ -59,10 +59,10 @@ export default function AnimalsList ({navigation}){
             <View style={{width: "45%", height: 200, backgroundColor: item.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
               <Image source={item.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
               <TouchableOpacity style={{backgroundColor: "#fff"}}>
-                <Text style={{fontFamily: 'monserratLight'}} onPress={loadCurrentAnimal}>{item.title}</Text>
+                <Text style={{fontFamily: 'monserratLight'}} onPress={() => navigation.navigate('CurrentAnimal',  {title: item.title, img: item.img})}>{item.title}</Text>
               </TouchableOpacity>
             </View>
-          )}//<Item title={item.title} />}
+          )}
           keyExtractor={item => item.id}
           contentContainerStyle={{alignItems: "center"}}
         />
