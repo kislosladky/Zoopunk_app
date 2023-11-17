@@ -1,19 +1,25 @@
 import React from 'react';
-import {SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, ScrollView, ImageBackground} from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 
 const Quizes = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Квиз1',
-    img: require("../../assets/ButtonMountains.png")
+    title: 'Как хорошо ты знаешь капибар?',
+    img: require("../../assets/Quiz1.png")
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Квиз2',
+    title: 'Кто проживает на дне океана?',
+    img: require("../../assets/Quiz2.png")
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Какая феечка винкс ты сегодня?',
+    img: require("../../assets/Quiz3.png")
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Квиз3',
+    img: require("../../assets/Quiz4.png")
   },
 ];
 
@@ -21,15 +27,33 @@ const Quizes = [
 const Destinations = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Достижение',
+    title: 'Стажер Орнитолог',
+    img: require("../../assets/Destination1.png")
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Опытный Орнитолог',
+    img: require("../../assets/Destination2.png")
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Капибарин',
+    img: require("../../assets/Destination3.png")
+  },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'По кочану и по кочерыжке',
+    img: require("../../assets/Destination4.png")
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Достижение2',
+    img: require("../../assets/Destination5.png")
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Достижение3',
+    img: require("../../assets/Destination6.png")
   },
 ];
 
@@ -37,24 +61,27 @@ const Destinations = [
 const Paths = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
+    title: 'Зоопарк за час',
+    img: require("../../assets/Paths1.png")
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
+    title: 'Зоопарк без аттракционов',
+    img: require("../../assets/Paths2.png")
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
+    title: 'И что-то ещё',
+    img: require("../../assets/Paths3.png")
   },
 ];
 
 const Item = (props) => (
-  <View style={{height: 170, width: 270, backgroundColor: "#c9f1d5", margin: 10, borderRadius: 20}}>
+  <TouchableOpacity style={{height: 170, width: 270, margin: 10, borderRadius: 20}}>
     <ImageBackground source={props.img} style={{width: 270, height: 170}}>
-    <Text>{props.title}</Text>
+    <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}}>{props.title}</Text>
     </ImageBackground>
-  </View>
+  </TouchableOpacity>
 );
 
 function UserMainScreen({navigation})  {
@@ -63,9 +90,9 @@ function UserMainScreen({navigation})  {
       <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
         <ScrollView showsVerticalScrollIndicator={false}>
 
-          <Text>Привет</Text>
-          <Text>нагибатор228</Text>
-          <Text style={{marginTop: "7%", marginBottom: "7%", marginLeft: "5%"}}>Квизы</Text>
+          <Text style={{fontFamily: 'monserratLight'}}>Привет</Text>
+          <Text style={{fontFamily: 'monserratLight'}}>нагибатор228</Text>
+          <Text style={{fontFamily: 'monserratLight', marginTop: "7%", marginBottom: "7%", marginLeft: "5%"}}>Квизы</Text>
           <FlatList
             data={Quizes}
             alwaysBounceHorizontal={true}
@@ -74,11 +101,11 @@ function UserMainScreen({navigation})  {
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
           />
-          <Text style={{marginTop: "10%", marginBottom: "7%", marginLeft: "5%"}}>Достижения</Text>
+          <Text style={{fontFamily: 'monserratLight', marginTop: "10%", marginBottom: "7%", marginLeft: "5%"}}>Достижения</Text>
           <FlatList
             data={Destinations}
             alwaysBounceHorizontal={true}
-            renderItem={({item}) => <Item title={item.title} />}
+            renderItem={({item}) => <Item title={item.title} img = {item.img}/>}
             keyExtractor={item => item.id}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
@@ -87,7 +114,7 @@ function UserMainScreen({navigation})  {
           <FlatList
             data={Paths}
             alwaysBounceHorizontal={true}
-            renderItem={({item}) => <Item title={item.title} />}
+            renderItem={({item}) => <Item title={item.title} img = {item.img}/>}
             keyExtractor={item => item.id}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}

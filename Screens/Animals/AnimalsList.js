@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
-  StatusBar,
-  Image,
-  TouchableOpacity,
-  ImageBackground
-} from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, TouchableOpacity, ImageBackground } from 'react-native';
 
 const DATA = [
   {
@@ -21,49 +11,49 @@ const DATA = [
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Дагестанский хуй 2',
     bg: '#85e781',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Дагестанский хуй 3',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Дагестанский хуй 4',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Хуй',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Хуй1',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Хуй2',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Хуй3',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Капибара',
     bg: '#b87979',
-    img: "../../assets/Tur.jpeg",
+    img: require("../../assets/Tur.jpeg"),
   },
 ];
 
@@ -75,7 +65,7 @@ const AnimalsList = ({navigation}) => {
           data={DATA}
           numColumns={2}
           showsVerticalScrollIndicator={false}
-          renderItem={({item}) => <Card bg = {item.bg} title = {item.title} img={item.img} navigation={this.navigation}/>}//<Item title={item.title} />}
+          renderItem={({item}) => <Card bg = {item.bg} title = {item.title} img={item.img}/>}//<Item title={item.title} />}
           keyExtractor={item => item.id}
           contentContainerStyle={{alignItems: "center"}}
         />
@@ -100,13 +90,12 @@ export default AnimalsList;
 
 
 const Card = (props) => (
-  <View style={{width: "45%", height: 200, backgroundColor: props.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
+  <TouchableOpacity style={{width: "45%", height: 200, backgroundColor: props.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
     <Image source={props.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
-    {/*<TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")}>*/}
     <TouchableOpacity style={{backgroundColor: "#fff"}}>
       <Text style={{fontFamily: 'monserratLight'}}>{props.title}</Text>
     </TouchableOpacity>
-  </View>
+  </TouchableOpacity>
 )
 
 
