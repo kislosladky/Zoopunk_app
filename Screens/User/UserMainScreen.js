@@ -18,13 +18,14 @@ const Quizes = [
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
+
     title: 'Квиз3',
     img: require("../../assets/Quiz4.png")
   },
 ];
 
 
-const Destinations = [
+const Achivments = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'Стажер Орнитолог',
@@ -79,7 +80,7 @@ const Paths = [
 const Item = (props) => (
   <TouchableOpacity style={{height: 170, width: 270, margin: 10, borderRadius: 20}}>
     <ImageBackground source={props.img} style={{width: 270, height: 170}}>
-    <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}}>{props.title}</Text>
+      <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}}>{props.title}</Text>
     </ImageBackground>
   </TouchableOpacity>
 );
@@ -101,9 +102,9 @@ function UserMainScreen({navigation})  {
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
           />
-          <Text style={{fontFamily: 'monserratLight', marginTop: "10%", marginBottom: "7%", marginLeft: "5%"}}>Достижения</Text>
+          <Text style={{fontFamily: 'monserratLight', marginTop: "10%", marginBottom: "7%", marginLeft: "5%"}}>Очивки</Text>
           <FlatList
-            data={Destinations}
+            data={Achivments}
             alwaysBounceHorizontal={true}
             renderItem={({item}) => <Item title={item.title} img = {item.img}/>}
             keyExtractor={item => item.id}
@@ -123,7 +124,9 @@ function UserMainScreen({navigation})  {
       </ImageBackground>
     </SafeAreaView>
   );
-};
+}
+
+
 
 
 export default UserMainScreen;
