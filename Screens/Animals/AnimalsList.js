@@ -103,7 +103,7 @@ const Card = (props) => (
   <View style={{width: "45%", height: 200, backgroundColor: props.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
     <Image source={props.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
     {/*<TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")}>*/}
-    <TouchableOpacity style={{backgroundColor: "#fff"}}>
+    <TouchableOpacity style={{backgroundColor: "#fff"}} onPress={() => props.navigation.navigate("CurrentAnimal")}>
       <Text style={{fontFamily: 'monserratLight'}}>{props.title}</Text>
     </TouchableOpacity>
   </View>

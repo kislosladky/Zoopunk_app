@@ -7,6 +7,7 @@ import AnimalsList from "../Screens/Animals/AnimalsList";
 import Destinations from "../Screens/User/Destinations/Destinations";
 import PathsMain from "../Screens/User/Paths/PathsMain";
 import QuizesList from "../Screens/User/Quizes/QuizesList";
+import CurrentAnimal from "../Screens/CurrentAnimal/CurrentAnimalScreen";
 import {NavigationContainer} from "@react-navigation/native";
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -40,6 +41,7 @@ function Navigation() {
         <Stack.Screen name="Destinations" component={Destinations} screenOptions={{headerShown: false}}/>
         <Stack.Screen name="Paths" component={PathsMain} screenOptions={{headerShown: false}}/>
         <Stack.Screen name="Quizes" component={QuizesList} screenOptions={{headerShown: false}}/>
+        <Stack.Screen name="CurrentAnimal" component={CurrentAnimal} screenOptions={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
