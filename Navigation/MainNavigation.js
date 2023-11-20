@@ -30,7 +30,7 @@ function HomeScreen() {
 }
 
 
-function Navigation(props) {
+function Navigation() {
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
