@@ -1,43 +1,75 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, ImageBackground } from 'react-native';
-
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  SectionList,
+  StatusBar,
+  ImageBackground,
+  FlatList,
+  TouchableOpacity, Image
+} from 'react-native';
 const DATA = [
+
   {
-    title: 'Животные Северной Америки',
-    data: ['Pizza', 'Burger', 'Risotto'],
+    img: require("../../assets/Tur.jpeg"),
+    title: 'Дагестанский хуй 1',
+    bg: "#b87979",
   },
   {
-    title: 'Животные Азии',
-    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Дагестанский хуй 2',
+    bg: '#85e781',
+    img: require("../../assets/Tur.jpeg"),
   },
   {
-    title: 'Фантастические твари',
-    data: ['Дагестанский тур', 'Coke', 'Beer'],
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Дагестанский хуй 3',
+    bg: '#b87979',
+    img: require("../../assets/Tur.jpeg"),
   },
   {
-    title: 'Капибары',
-    data: ['Илья', 'Саня'],
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'Дагестанский хуй 4',
+    bg: '#b87979',
+    img: require("../../assets/Tur.jpeg"),
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Хуй',
+    bg: '#b87979',
+    img: require("../../assets/Tur.jpeg"),
   },
 ];
 
-const AnimalsList = ({navigation}) => (
-  <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%"}}>
-    <SafeAreaView style={styles.container}>
-      <SectionList
-        sections={DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({item}) => (
-          <View style={styles.item}>
-            <Text style={styles.title}>{item}</Text>
-          </View>
-        )}
-        renderSectionHeader={({section: {title}}) => (
-          <Text style={styles.header}>{title}</Text>
-        )}
-      />
-    </SafeAreaView>
-  </ImageBackground>
-);
+
+export default function AnimalsList ({navigation}){
+    const loadCurrentAnimal = () => {
+      navigation.navigate('CurrentAnimal');
+    }
+    return(
+      <SafeAreaView>
+      <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
+        <FlatList
+          data={DATA}
+          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => (
+            <View style={{width: "45%", height: 200, backgroundColor: item.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
+              <Image source={item.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
+              <TouchableOpacity style={{backgroundColor: "#fff"}}>
+                <Text style={{fontFamily: 'monserratLight'}} onPress={loadCurrentAnimal}>{item.title}</Text>
+              </TouchableOpacity>
+            </View>
+          )}//<Item title={item.title} />}
+          keyExtractor={item => item.id}
+          contentContainerStyle={{alignItems: "center"}}
+        />
+      </ImageBackground>
+  </SafeAreaView>
+    )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -58,5 +90,3 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
-
-export default AnimalsList;
