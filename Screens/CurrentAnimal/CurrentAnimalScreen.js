@@ -1,10 +1,10 @@
 import {
-    ImageBackground, Pressable,
-    SafeAreaView, ScrollView,
+    ImageBackground,
+    SafeAreaView,
     StatusBar,
     StyleSheet,
     Text,
-    Touchable, TouchableOpacity, View
+    TouchableOpacity
 } from "react-native";
 import {ImageStyles} from "../../Styles/ImageStyles";
 import React from "react";
