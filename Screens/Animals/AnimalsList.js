@@ -14,12 +14,12 @@ const DATA = [
 
   {
     img: require("../../assets/Tur.jpeg"),
-    title: 'Дагестанский хуй 1',
+    title: 'Дагестанский neh 1',
     bg: "#b87979",
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Дагестанский хуй 2',
+    title: 'Дагестанский neh 2',
     bg: '#85e781',
     img: require("../../assets/Tur.jpeg"),
   },
@@ -45,11 +45,11 @@ const DATA = [
 
 
 export default function AnimalsList ({navigation}){
-    const loadCurrentAnimal = () => {
-      navigation.navigate('CurrentAnimal');
-    }
-    return(
-      <SafeAreaView>
+  const loadCurrentAnimal = () => {
+    navigation.navigate('CurrentAnimal');
+  }
+  return(
+    <SafeAreaView>
       <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
         <FlatList
           data={DATA}
@@ -59,16 +59,16 @@ export default function AnimalsList ({navigation}){
             <View style={{width: "45%", height: 200, backgroundColor: item.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
               <Image source={item.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
               <TouchableOpacity style={{backgroundColor: "#fff"}}>
-                <Text style={{fontFamily: 'monserratLight'}} onPress={loadCurrentAnimal}>{item.title}</Text>
+                <Text style={{fontFamily: 'monserratLight'}} onPress={() => navigation.navigate('CurrentAnimal',  {title: item.title, img: item.img})}>{item.title}</Text>
               </TouchableOpacity>
             </View>
-          )}//<Item title={item.title} />}
+          )}
           keyExtractor={item => item.id}
           contentContainerStyle={{alignItems: "center"}}
         />
       </ImageBackground>
-  </SafeAreaView>
-    )
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
