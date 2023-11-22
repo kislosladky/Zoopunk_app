@@ -13,6 +13,7 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@rneui/themed": "^4.0.0-rc.8",
+    "@rnmapbox/maps": "github:rnmapbox/maps#main",
     "expo": "~49.0.15",
     "expo-app-loading": "^2.1.1",
     "expo-status-bar": "~1.6.0",
@@ -22,7 +23,8 @@
     "react-native-maps": "^1.8.0",
     "react-native-vector-icons": "^10.0.2",
     "rneui": "^1.0.0-stable.0",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

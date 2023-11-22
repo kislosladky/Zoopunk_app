@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
+import { SafeAreaView, FlatList, Text, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 
 const Quizes = [
   {
@@ -85,6 +85,14 @@ const Item = (props) => (
   </TouchableOpacity>
 );
 
+const AchivementsItem = (props) => (
+  <TouchableOpacity style={{height: 170, width: 270, margin: 10, borderRadius: 20}} onPress={() => Alert.alert(props.title)}>
+    <ImageBackground source={props.img} style={{width: 270, height: 170}}>
+      <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}}>{props.title}</Text>
+    </ImageBackground>
+  </TouchableOpacity>
+);
+
 function UserMainScreen({navigation})  {
   return (
     <SafeAreaView>
@@ -106,7 +114,7 @@ function UserMainScreen({navigation})  {
           <FlatList
             data={Achivments}
             alwaysBounceHorizontal={true}
-            renderItem={({item}) => <Item title={item.title} img = {item.img}/>}
+            renderItem={({item}) => <Item title={item.title} img = {item.img} onPress={()=>Alert.alert("dsg", 'fdfd', [{text:"egreges"}])}/>}
             keyExtractor={item => item.id}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
