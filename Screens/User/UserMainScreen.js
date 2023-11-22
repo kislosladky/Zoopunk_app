@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, FlatList, Text, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
+import { SafeAreaView, FlatList, Text, ScrollView, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 
 const Quizes = [
   {
@@ -114,7 +114,7 @@ function UserMainScreen({navigation})  {
           <FlatList
             data={Achivments}
             alwaysBounceHorizontal={true}
-            renderItem={({item}) => <Item title={item.title} img = {item.img} onPress={()=>Alert.alert("dsg", 'fdfd', [{text:"egreges"}])}/>}
+            renderItem={({item}) => <AchivementsItem title={item.title} img = {item.img}/>}
             keyExtractor={item => item.id}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
