@@ -1,30 +1,25 @@
-import {
-    ImageBackground,
-    SafeAreaView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity
-} from "react-native";
+import { ImageBackground, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
 import {ImageStyles} from "../../Styles/ImageStyles";
 import React from "react";
 import CardDescription from "./CurrentAnimalDescription";
 import CardPhoto from "./CurrentAnimalPhoto";
+import {useRoute} from "@react-navigation/native";
 
-export default function CurrentAnimal(props) {
+export default function CurrentAnimal({navigation}) {
+    const route = useRoute()
     return (
-        <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={ImageStyles.backgroundImg}>
-            <SafeAreaView style={styles.container}>
-                <CardPhoto img={props.img} />
-                <CardDescription title={props.title} />
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.text}>Проложить маршрут до животного</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.text}>Добавить в лист ожидания</Text>
-                </TouchableOpacity>
-            </SafeAreaView>
-        </ImageBackground>
+      <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={ImageStyles.backgroundImg}>
+          <SafeAreaView style={styles.container}>
+              <CardPhoto img={route.params?.img} />
+              <CardDescription title={route.params?.title}/>
+              <TouchableOpacity style={styles.button}>
+                  <Text style={styles.text}>Проложить маршрут до животного</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button}>
+                  <Text style={styles.text}>Добавить в лист ожидания</Text>
+              </TouchableOpacity>
+          </SafeAreaView>
+      </ImageBackground>
     );
 }
 
