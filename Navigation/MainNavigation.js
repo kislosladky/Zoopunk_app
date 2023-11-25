@@ -1,17 +1,13 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import WelcomePage from "../Screens/WelcomePage";
 import MapScreen from "../Screens/Map/MapScreen";
 import UserMainScreen from "../Screens/User/UserMainScreen";
 import AnimalsList from "../Screens/Animals/AnimalsList";
-import Destinations from "../Screens/User/Destinations/Destinations";
-import PathsMain from "../Screens/User/Paths/PathsMain";
-import QuizesList from "../Screens/User/Quizes/QuizesList";
 import CurrentAnimal from "../Screens/CurrentAnimal/CurrentAnimalScreen";
 import {NavigationContainer} from "@react-navigation/native";
-import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import Setting from "../Screens/User/SettingScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,15 +30,9 @@ function Navigation() {
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/*<Stack.Screen name="Welcome" component={WelcomePage}/>*/}
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
-        <Stack.Screen name="Map" component={MapScreen}/>
-        <Stack.Screen name="User" component={UserMainScreen}/>
-        <Stack.Screen name="Animals" component={AnimalsList} screenOptions={{headerShown: false}}/>
+        <Stack.Screen name="Setting" component={Setting}/>
         <Stack.Screen name="CurrentAnimal" component={CurrentAnimal} screenOptions={{headerShown: false}}/>
-        <Stack.Screen name="Destinations" component={Destinations} screenOptions={{headerShown: false}}/>
-        <Stack.Screen name="Paths" component={PathsMain} screenOptions={{headerShown: false}}/>
-        <Stack.Screen name="Quizes" component={QuizesList} screenOptions={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
