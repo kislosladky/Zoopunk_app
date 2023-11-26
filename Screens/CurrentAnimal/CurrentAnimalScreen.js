@@ -15,9 +15,9 @@ export default function CurrentAnimal({navigation}) {
               <TouchableOpacity style={styles.button}>
                   <Text style={styles.text}>Проложить маршрут до животного</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button}>
-                  <Text style={styles.text}>Добавить в лист ожидания</Text>
-              </TouchableOpacity>
+              {/*<TouchableOpacity style={styles.button}>*/}
+              {/*    <Text style={styles.text}>Добавить в лист ожидания</Text>*/}
+              {/*</TouchableOpacity>*/}
           </SafeAreaView>
       </ImageBackground>
     );

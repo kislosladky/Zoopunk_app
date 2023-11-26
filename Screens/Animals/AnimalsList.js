@@ -45,9 +45,6 @@ const DATA = [
 
 
 export default function AnimalsList ({navigation}){
-  const loadCurrentAnimal = () => {
-    navigation.navigate('CurrentAnimal');
-  }
   return(
     <SafeAreaView>
       <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
@@ -56,12 +53,10 @@ export default function AnimalsList ({navigation}){
           numColumns={2}
           showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
-            <View style={{width: "45%", height: 200, backgroundColor: item.bg, borderRadius: 20, margin: "2%", alignItems: "center"}}>
-              <Image source={item.img} style={{width: "70%", height: "70%", marginTop: "10%", marginBottom: "10%"}}/>
-              <TouchableOpacity style={{backgroundColor: "#fff"}}>
-                <Text style={{fontFamily: 'monserratLight'}} onPress={() => navigation.navigate('CurrentAnimal',  {title: item.title, img: item.img})}>{item.title}</Text>
+              <TouchableOpacity style={{width: "45%", height: 200, backgroundColor: item.bg, borderRadius: 20, margin: "2%", alignItems: "center"}} onPress={() => navigation.navigate('CurrentAnimal',  {title: item.title, img: item.img})}>
+              <Image source={item.img} style={{width: "70%", height: "70%", marginTop: "5%", marginBottom: "10%"}}/>
+                <Text style={{fontFamily: 'monserratLight'}} >{item.title}</Text>
               </TouchableOpacity>
-            </View>
           )}
           keyExtractor={item => item.id}
           contentContainerStyle={{alignItems: "center"}}

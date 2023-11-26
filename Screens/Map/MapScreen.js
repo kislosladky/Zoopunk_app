@@ -1,6 +1,4 @@
 import {ImageBackground, Text, View} from "react-native";
-import {StatusBar} from "expo-status-bar";
-import {TextStyles} from "../../Styles/TextStyles";
 import MapView from "react-native-maps";
 
 export default function MapScreen({navigation}) {
