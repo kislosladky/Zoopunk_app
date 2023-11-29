@@ -1,45 +1,64 @@
-import {
-    ImageBackground,
-    SafeAreaView, StatusBar,
-    StyleSheet,
-    Text, TouchableOpacity, View,
-} from "react-native";
-import React from "react";
-import ResultQuiz from "./Components/ResultQuiz"
+import React from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Title from './Components/TitleBar';
 
-const Result = ({navigation}) => {
-    return(
-        <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
-            <SafeAreaView style = {styles.container}>
-                <ResultQuiz title={'aaaa'} rwanswers={'papeigovna'}></ResultQuiz>
-                <TouchableOpacity style={styles.startButt} onPress={()=>navigation.navigate('QuizHome')}>
-                    <Text style={styles.startButtStyle}>Home</Text>
-                </TouchableOpacity>
-            </SafeAreaView>
-        </ImageBackground>
-    )
-}
-export default Result
+const Result = ({navigation, route}) => {
+    const {score} = route.params;
+    return (
+        <View style={styles.container}>
+            <Title titleText='RESULTS' />
+            <Text style={styles.scoreValue}>{score}</Text>
+            <View style={styles.bannerContainer}>
+                <Image
+                    source={{
+
+                    }}
+                    style={styles.banner}
+                    resizeMode="contain"
+                />
+            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('QuizHome')} style={styles.button}>
+                <Text style={styles.buttonText}>GO TO HOME</Text>
+            </TouchableOpacity>
+        </View>
+    );
+};
+
+
+
+export default Result;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: StatusBar.currentHeight,
-        marginHorizontal: 16,
-        marginTop: '20%'
+    banner: {
+        height: 300,
+        width: 300,
     },
-    startButt: {
-        // backgroundColor: '#000',
-        backgroundColor: '#DEF1FF',
-        borderRadius: 20,
-        width: '60%',
-        height: '10%',
-        alignSelf: 'center',
+    bannerContainer: {
         justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
     },
-    startButtStyle: {
-        alignSelf: 'center',
+    container: {
+        paddingTop: 40,
+        paddingHorizontal: 20,
+        height: '100%',
     },
-
-
+    button: {
+        width: '100%',
+        backgroundColor: '#1A759F',
+        padding: 16,
+        borderRadius: 16,
+        alignItems: 'center',
+        marginBottom: 30,
+    },
+    buttonText: {
+        fontSize: 24,
+        fontWeight: '600',
+        color: 'white',
+    },
+    scoreValue:{
+        fontSize: 24,
+        fontWeight:'800',
+        alignSelf:'center'
+    }
 });
