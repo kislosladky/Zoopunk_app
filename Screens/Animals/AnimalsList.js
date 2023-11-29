@@ -46,7 +46,9 @@ const DATA = [
 
 export default function AnimalsList ({navigation}){
     const loadCurrentAnimal = () => {
-      navigation.navigate('CurrentAnimal');
+      navigation.navigate('QuizHome');
+      navigation.navigate('QuizResult');
+      // navigation.navigate('Quizzes');
     }
     return(
       <SafeAreaView>
