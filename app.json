@@ -15,16 +15,32 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "io.expo.client"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/MainBackground.png",
         "backgroundColor": "#f1dcc6"
-      }
+      },
+      "package": "com.solnyshko3622.Zoopunk_app"
     },
     "web": {
       "favicon": "./assets/Icon.png"
+    },
+    "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox",
+          "RNMapboxMapsDownloadToken": "sk.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHBqOHM5Z3gwN2Z4Mm5sNnF5M2QxN3VpIn0.aYxcRFnAm4aka-4-YLcdwQ"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "32ed8e43-2e43-4c1d-9264-6a854269e56e"
+      }
     }
   }
 }

@@ -13,30 +13,31 @@ import {
 const DATA = [
 
   {
+    id: '1',
     img: require("../../assets/Tur.jpeg"),
     title: 'Дагестанский neh 1',
     bg: "#b87979",
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    id: '2',
     title: 'Дагестанский neh 2',
     bg: '#85e781',
     img: require("../../assets/Tur.jpeg"),
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    id: '3',
     title: 'Дагестанский хуй 3',
     bg: '#b87979',
     img: require("../../assets/Tur.jpeg"),
   },
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    id: '4',
     title: 'Дагестанский хуй 4',
     bg: '#b87979',
     img: require("../../assets/Tur.jpeg"),
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    id: '5',
     title: 'Хуй',
     bg: '#b87979',
     img: require("../../assets/Tur.jpeg"),
