@@ -17,23 +17,26 @@ let User =
 const Quizes = [
   {
     title: 'Как хорошо ты знаешь капибар?',
-    img: require("../../assets/Quiz1.png")
+    img: require("../../assets/Quiz1.png"),
+    descriptions: "вау вау вау крутой квиз"
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Кто проживает на дне океана?',
-    img: require("../../assets/Quiz2.png")
+    img: require("../../assets/Quiz2.png"),
+    descriptions: "вау вау вау крутой квиз"
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Какая феечка винкс ты сегодня?',
-    img: require("../../assets/Quiz3.png")
+    img: require("../../assets/Quiz3.png"),
+    descriptions: "вау вау вау крутой квиз"
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-
     title: 'Квиз3',
-    img: require("../../assets/Quiz4.png")
+    img: require("../../assets/Quiz4.png"),
+    descriptions: "вау вау вау крутой квиз"
   },
 ];
 
@@ -93,7 +96,8 @@ const Achivments = [
 const Item = (props) => (
   <TouchableOpacity style={{height: 170, width: 270, margin: 10, borderRadius: 20}}>
     <ImageBackground source={props.img} style={{width: 270, height: 170}}>
-      <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}}>{props.title}</Text>
+      <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}} onPress={() => Alert.alert(props.title, props.descriptions,
+        [{text: "Пройти квиз", onPress: () => props.navigation.navigate("Home")}, {text: "Выбрать другой"}])}>{props.title}</Text>
     </ImageBackground>
   </TouchableOpacity>
 );
@@ -133,7 +137,13 @@ function UserMainScreen({navigation})  {
           <FlatList
             data={Quizes}
             alwaysBounceHorizontal={true}
-            renderItem={({item}) => <Item title={item.title} img = {item.img}/>}
+            renderItem={({item}) => (
+              <TouchableOpacity style={{height: 170, width: 270, margin: 10, borderRadius: 20}} onPress={() => Alert.alert(item.title, item.descriptions,
+                [{text: "Пройти квиз", onPress: () => navigation.navigate("QuizHome")}, {text: "Выбрать другой"}])}>
+                <ImageBackground source={item.img} style={{width: 270, height: 170}}>
+                  <Text style={{fontFamily: 'monserratLight', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}}>{item.title}</Text>
+                </ImageBackground>
+            </TouchableOpacity>)}
             keyExtractor={item => item.id}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}

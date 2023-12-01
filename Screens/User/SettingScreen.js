@@ -15,7 +15,7 @@ export default function Setting({navigation}) {
                     marginRight: 60,
                     borderRadius: 20,
       }}>
-        <View style={{borderRadius: 20, backgroundColor: "#DFFBCE"}}>
+        <View style={{borderRadius: 20, backgroundColor: "#DFFBCE", marginTop: 200}}>
           <Text
             style={{
                     fontSize: 25,
