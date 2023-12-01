@@ -23,7 +23,7 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 40,
+        paddingTop: '20%',
         paddingHorizontal: 20,
         height: '100%',
     },

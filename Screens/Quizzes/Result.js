@@ -1,26 +1,25 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View, ImageBackground, TouchableWithoutFeedback} from 'react-native';
 import Title from './Components/TitleBar';
 
 const Result = ({navigation, route}) => {
     const {score} = route.params;
     return (
-        <View style={styles.container}>
-            <Title titleText='RESULTS' />
-            <Text style={styles.scoreValue}>{score}</Text>
-            <View style={styles.bannerContainer}>
-                <Image
-                    source={{
+        <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
+            <View style={styles.container}>
+                <TouchableWithoutFeedback style={styles.elevationHolder}>
+                    <View style={styles.resultHolder}>
+                        <Title titleText='Правильных ответов:' />
+                        <Text style={styles.scoreValue}>{score/10}</Text>
+                    </View>
+                </TouchableWithoutFeedback>
 
-                    }}
-                    style={styles.banner}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('QuizHome')} style={styles.button}>
+                    <Text style={styles.buttonText}>На страницу викторины</Text>
+                </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('QuizHome')} style={styles.button}>
-                <Text style={styles.buttonText}>GO TO HOME</Text>
-            </TouchableOpacity>
-        </View>
+        </ImageBackground>
+
     );
 };
 
@@ -45,20 +44,31 @@ const styles = StyleSheet.create({
     },
     button: {
         width: '100%',
-        backgroundColor: '#1A759F',
+        backgroundColor: '#FFFEE9',
         padding: 16,
         borderRadius: 16,
         alignItems: 'center',
         marginBottom: 30,
+        elevation: 10,
     },
     buttonText: {
         fontSize: 24,
-        fontWeight: '600',
-        color: 'white',
+        color: 'black',
     },
     scoreValue:{
         fontSize: 24,
-        fontWeight:'800',
         alignSelf:'center'
+    },
+    resultHolder:{
+        backgroundColor: '#FFFEE9',
+        borderRadius: 20,
+        paddingLeft: 10,
+        paddingBottom: 16,
+        marginBottom: '20%',
+        marginTop: '60%',
+        elevation: 10,
+    },
+    elevationHolder:{
+        elevation: 10,
     }
 });

@@ -90,20 +90,6 @@ const Quiz = ({navigation}) => {
                                 <Text style={styles.option}>{decodeURIComponent(options[3])}</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.bottom}>
-                            {/* <TouchableOpacity style={styles.button}>
-                  <Text style={styles.buttonText}>PREV</Text>
-                </TouchableOpacity> */}
-
-                            {/*{ques!==9 &&<TouchableOpacity style={styles.button} onPress={handleNextPress}>*/}
-                            {/*    <Text style={styles.buttonText}>SKIP</Text>*/}
-                            {/*</TouchableOpacity> }*/}
-
-                            {/*{ques===9 &&<TouchableOpacity style={styles.button} onPress={handleShowResult}>*/}
-                            {/*    <Text style={styles.buttonText}>SHOW RESULTS</Text>*/}
-                            {/*</TouchableOpacity> }*/}
-
-                        </View>
                     </View>
                 )}
             </View>
