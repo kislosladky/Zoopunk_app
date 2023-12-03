@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
         marginBottom: '20%',
         marginTop: '60%',
-        elevation: 10,
     },
     elevationHolder:{
         elevation: 10,
