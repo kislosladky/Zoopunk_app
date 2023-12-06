@@ -1,5 +1,4 @@
 import {Alert, ImageBackground, Text, TextInput, TouchableOpacity, View} from "react-native";
-import RNPickerSelect from "react-native-picker-select";
 
 function functionCombined({navigation}) {
  Alert.alert("Успешно", "Ваши данные были успешно сохранены и обновлены");
@@ -48,17 +47,6 @@ export default function Setting({navigation}) {
             marginTop: 10,
             textAlign: "center"}}
           placeholder="пароль"/>
-        <RNPickerSelect
-          onValueChange={(value) => console.log(value)}
-          items={[
-            { label: "Картинка1", value: "Я честно честно это допишу" },
-            { label: "Картинка2", value: "Я честно честно это допишу" },
-            { label: "Картинка3", value: "Я честно честно это допишу" },
-            { label: "Картинка3", value: "Я честно честно это допишу" },
-            { label: "Картинка3", value: "Я честно честно это допишу" },
-            { label: "Картинка4", value: "Я честно честно это допишу" },
-          ]}
-        />
         <TouchableOpacity style={{backgroundColor: "#BEE4FF", borderRadius: 20, alignItems: "center", marginTop: 50, height: 33}}
                       onPress={() => functionCombined({navigation})}  >
           <Text style={{fontFamily: 'monserratLight', fontSize: 20}}>Cохранить и выйти</Text>
