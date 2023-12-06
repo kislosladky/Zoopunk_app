@@ -1,7 +1,7 @@
 import {Alert, ImageBackground, Text, TextInput, TouchableOpacity, View} from "react-native";
 
 function functionCombined({navigation}) {
- Alert.alert("Успешно", "Ваши данные были успешно сохранены и обновлены");
+ //Alert.alert("Успешно", "Ваши данные были успешно сохранены и обновлены");
  navigation.navigate("User");
 }
 
