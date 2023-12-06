@@ -6,7 +6,7 @@ import { StyleSheet, View } from 'react-native';
 
 import Mapbox from '@rnmapbox/maps';
 
-Mapbox.setAccessToken('k.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHBqOHM5Z3gwN2Z4Mm5sNnF5M2QxN3VpIn0.aYxcRFnAm4aka-4-YLcdwQ');
+Mapbox.setAccessToken('sk.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHB0amJpYjkwZnV1MmxvcDBxcmhubTZ2In0.pUpnMiKX71UHvcoJezms1w');
 
 export default function MapScreen ({navigation}){
   return (
