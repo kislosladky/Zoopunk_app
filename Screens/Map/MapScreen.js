@@ -2,17 +2,40 @@ import 'expo-dev-client';
 
 import React from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 
-import Mapbox from '@rnmapbox/maps';
+import MapView from "react-native-maps";
 
-Mapbox.setAccessToken('k.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHBqOHM5Z3gwN2Z4Mm5sNnF5M2QxN3VpIn0.aYxcRFnAm4aka-4-YLcdwQ');
 
 export default function MapScreen ({navigation}){
+  let map;
+  if (Platform.OS === "android") {
+    map = <MapView
+      style={styles.map}
+      //specify our coordinates.
+      initialRegion={{
+        latitude: 37.78825,
+        longitude: -122.4324,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}
+    />
+  } else {
+    map = <MapView
+      style={styles.map}
+      //specify our coordinates.
+      initialRegion={{
+        latitude: 37.78825,
+        longitude: -122.4324,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}
+    />
+  }
   return (
     <View style={styles.page}>
       <View style={styles.container}>
-        <Mapbox.MapView style={styles.map} />
+        {map}
       </View>
     </View>
   );

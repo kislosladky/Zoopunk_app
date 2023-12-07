@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Title from './Components/TitleBar';
 
-const QuizHome = ({navigation}) => {
+const Home = ({navigation}) => {
     return (
         <ImageBackground source={require("../../assets/MainBackground.png")} resizeMode="cover" style={{height: "100%", width: "100%", backgroundColor: "rgba(253,253,241,0.82)"}}>
             <View style={styles.container}>
@@ -19,11 +19,11 @@ const QuizHome = ({navigation}) => {
     );
 };
 
-export default QuizHome;
+export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 40,
+        paddingTop: '20%',
         paddingHorizontal: 20,
         height: '100%',
     },
@@ -33,13 +33,13 @@ const styles = StyleSheet.create({
         padding: 16,
         borderRadius: 16,
         alignItems: 'center',
-        marginBottom: 30,
         elevation: 10,
     },
     buttonText: {
         fontSize: 24,
         fontWeight: '300',
-        color: 'black',
+        color: '#404040',
+        fontFamily: 'monserratBold',
     },
     textHolder: {
         width: '100%',
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#F1FFF0',
         borderRadius: 20,
         alignSelf: 'center',
-        marginTop: '30%',
-        marginBottom: '40%',
+        marginTop: '50%',
+        marginBottom: '10%',
         elevation: 10,
     },
     containerButton: {
