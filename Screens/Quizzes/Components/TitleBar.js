@@ -15,6 +15,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 36,
         fontWeight: '300',
+        fontFamily: 'monserratBold',
+        color: '#404040',
     },
     container: {
         paddingVertical: 16,

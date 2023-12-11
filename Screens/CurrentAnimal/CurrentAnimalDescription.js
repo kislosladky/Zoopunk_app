@@ -12,7 +12,7 @@ const Card = props => (
 
 export default Card;
 
-const Container = styled.TouchableOpacity`
+const Container = styled.View`
   background: #ffe5e5;
   width: 100%;
   height: 50%;
@@ -20,19 +20,23 @@ const Container = styled.TouchableOpacity`
   margin-top: 5%;
   margin-bottom: 5%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 99;  
 `;
 
 const Cover = styled.View`
   width: 100%;
   height: 100%;
-  border-radius: 14px;
+  border-radius: 20px;
   overflow: hidden;
   top: 0;
   margin-top: 0;
+  elevation: 10;
+  z-index: 0;
 `;
 
 const Title = styled.Text`
   font-size: 20px;
+  font-family: 'monserratBold';
   color: #000;
   margin-top: 20px;
   margin-left: 20px;

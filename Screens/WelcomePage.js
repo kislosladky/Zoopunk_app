@@ -1,5 +1,4 @@
 import {Button, SafeAreaView, Text, View} from "react-native";
-import {StatusBar} from "expo-status-bar";
 import {TextStyles} from "../Styles/TextStyles";
 
 export default function WelcomePage({navigation}) {

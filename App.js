@@ -1,10 +1,11 @@
 import {useState} from "react";
-import * as Font from 'expo-font';
+import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import Navigation from "./Navigation/MainNavigation";
 
 const fonts = () => Font.loadAsync({
-  'monserratLight': require('./Styles/Fonts_MontserratAll/MontserratAlternates-LightItalic.ttf')
+  'monserratLight': require('./Styles/Fonts_MontserratAll/MontserratAlternates-LightItalic.ttf'),
+  'monserratBold': require('./Styles/Fonts_MontserratAll/MontserratAlternates-Bold.ttf')
 })
 
 export default function App() {

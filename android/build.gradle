@@ -8,8 +8,7 @@ buildscript {
         targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '33')
         kotlinVersion = findProperty('android.kotlinVersion') ?: '1.8.10'
         frescoVersion = findProperty('expo.frescoVersion') ?: '2.5.0'
-
-        // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
+        RNMapboxMapsVersion = '11.0.0'
         ndkVersion = "23.1.7779620"
     }
     repositories {
@@ -22,37 +21,66 @@ buildscript {
     }
 }
 
-allprojects {
-    repositories {
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url(new File(['node', '--print', "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), '../android'))
-        }
-        maven {
-            // Android JSC is installed from npm
-            url(new File(['node', '--print', "require.resolve('jsc-android/package.json')"].execute(null, rootDir).text.trim(), '../dist'))
-        }
-
-        google()
-        mavenCentral()
-        maven { url 'https://www.jitpack.io' }
-    }
-}
+// allprojects {
+//     repositories {
+//         maven {
+//             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+//             url(new File(['node', '--print', "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), '../android'))
+//         }
+//         maven {
+//             // Android JSC is installed from npm
+//             url(new File(['node', '--print', "require.resolve('jsc-android/package.json')"].execute(null, rootDir).text.trim(), '../dist'))
+//         }
+//
+//         google()
+//         mavenCentral()
+//         maven { url 'https://www.jitpack.io' }
+//     }
+// }
 // @generated begin @rnmapbox/maps-v2-maven - expo prebuild (DO NOT MODIFY) sync-32f1b7024bb5099f2805443b1960a3233ccde124
 
+// allprojects {
+//     repositories {
+//         maven {
+//             url 'https://api.mapbox.com/downloads/v2/releases/maven'
+//             authentication {
+//                 basic(BasicAuthentication)
+//             }
+//             credentials {
+//                 username = "mapbox"
+//                 password = "k.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHBqOHM5Z3gwN2Z4Mm5sNnF5M2QxN3VpIn0.aYxcRFnAm4aka-4-YLcdwQ"
+//             }
+//         }
+//     }
+// }
 allprojects {
     repositories {
+        // ...other repos
         maven {
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             authentication {
                 basic(BasicAuthentication)
             }
             credentials {
-                username = "mapbox"
-                password = "k.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHBqOHM5Z3gwN2Z4Mm5sNnF5M2QxN3VpIn0.aYxcRFnAm4aka-4-YLcdwQ"
+                // Do not change the username below.
+                // This should always be `mapbox` (not your username).
+                username = 'mapbox'
+                // Use the secret token you stored in gradle.properties as the password
+                password = project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: ""
             }
         }
+        // ...even more repos?
     }
 }
 
 // @generated end @rnmapbox/maps-v2-maven
+// android {
+//     defaultConfig {
+//         minSdk 21
+//     }
+// }
+dependencies {
+    implementation 'com.mapbox.maps:android:11.0.0'
+    // If you're using compose also add the compose extension
+    // implementation 'com.mapbox.extension:maps-compose:11.0.0'
+}

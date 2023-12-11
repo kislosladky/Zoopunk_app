@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "preserveSymlinks": true,
+    "target": "es6",
+    "module": "es6",
+    "allowJs": false,
+    "jsx": "react-native",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "paths": {
+      "@rnmapbox/maps": ["../src"],
+      "react-native": ["./node_modules/react-native"],
+    }
+  },
+  "include": [
+    "index.ts",
+    "jest.config.ts",
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.codepart.tsx"
+  ],
+}

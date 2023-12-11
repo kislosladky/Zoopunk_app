@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import {useEffect} from 'react';
-import {ImageBackground, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {ImageBackground, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 
 
 const shuffleArray=(array)=> {
@@ -71,10 +71,14 @@ const Quiz = ({navigation}) => {
                 {isLoading ? <View style={{display:'flex', justifyContent:'center', alignItems:'center', height:'100%'}}>
                     <Text style={{fontSize:32, fontWeight:'700'}}>LOADING...</Text>
                 </View> : questions && (
+
                     <View style={styles.parent}>
-                        <View style={styles.top}>
-                            <Text style={styles.question}>{decodeURIComponent(questions[ques].question)}</Text>
-                        </View>
+
+
+                            <View style={styles.top}>
+                                <Text style={styles.question}>{decodeURIComponent(questions[ques].question)}</Text>
+                            </View>
+
                         <View style={styles.options}>
 
                             <TouchableOpacity style={styles.optionButtom} onPress={()=>handlSelectedOption(options[0])}>
@@ -89,20 +93,6 @@ const Quiz = ({navigation}) => {
                             <TouchableOpacity style={styles.optionButtom} onPress={()=>handlSelectedOption(options[3])}>
                                 <Text style={styles.option}>{decodeURIComponent(options[3])}</Text>
                             </TouchableOpacity>
-                        </View>
-                        <View style={styles.bottom}>
-                            {/* <TouchableOpacity style={styles.button}>
-                  <Text style={styles.buttonText}>PREV</Text>
-                </TouchableOpacity> */}
-
-                            {/*{ques!==9 &&<TouchableOpacity style={styles.button} onPress={handleNextPress}>*/}
-                            {/*    <Text style={styles.buttonText}>SKIP</Text>*/}
-                            {/*</TouchableOpacity> }*/}
-
-                            {/*{ques===9 &&<TouchableOpacity style={styles.button} onPress={handleShowResult}>*/}
-                            {/*    <Text style={styles.buttonText}>SHOW RESULTS</Text>*/}
-                            {/*</TouchableOpacity> }*/}
-
                         </View>
                     </View>
                 )}
@@ -122,15 +112,14 @@ const styles = StyleSheet.create({
     top: {
         marginVertical: 16,
         backgroundColor: '#DEF1FF',
+        padding: 10,
         width: '100%',
         height: '30%',
         borderRadius: 20,
         justifyContent: 'center',
         elevation: 10,
-        shadowColor: 'rgba(0,0,0, .1)', // IOS
-        shadowOffset: { height: 1, width: 1 }, // IOS
-        shadowOpacity: 1, // IOS
-        shadowRadius: 1, //IOS
+        overflow:'scroll',
+        marginTop: '35%',
     },
     options: {
         marginVertical: 16,
@@ -157,17 +146,21 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     question: {
-        fontSize: 28,
+        fontSize: 24,
         paddingHorizontal: 16,
         paddingVertical: 16,
         alignSelf: 'center',
+        color: '#404040',
+        fontFamily: 'monserratBold',
     },
     option: {
         fontSize: 18,
         fontWeight: '500',
-        color: 'black',
+        color: '#404040',
+        fontFamily: 'monserratBold',
     },
     optionButtom: {
+        marginBottom: '3%',
         elevation: 10,
         paddingVertical: 12,
         marginVertical: 6,
@@ -178,6 +171,9 @@ const styles = StyleSheet.create({
     parent: {
         height: '100%',
     },
+    elevationHolder:{
+        elevation: 10,
+    }
 });
 // export default Quizz
 //
