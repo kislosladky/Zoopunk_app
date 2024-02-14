@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Zoopunk_app",
+    "slug": "Zoopunk_app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/Loading.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#CADFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "io.expo.client"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/MainBackground.png",
+        "backgroundColor": "#f1dcc6"
+      },
+      "package": "com.solnyshko3622.Zoopunk_app"
+    },
+    "web": {
+      "favicon": "./assets/Icon.png"
+    },
+    "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox",
+          "RNMapboxMapsDownloadToken": "sk.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHB0amJpYjkwZnV1MmxvcDBxcmhubTZ2In0.pUpnMiKX71UHvcoJezms1w"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "32ed8e43-2e43-4c1d-9264-6a854269e56e"
+      }
+    }
+  }
+}
