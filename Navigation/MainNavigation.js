@@ -10,6 +10,8 @@ import CurrentAnimal from "../Screens/CurrentAnimal/CurrentAnimalScreen";
 import {NavigationContainer} from "@react-navigation/native";
 import { FontAwesome } from '@expo/vector-icons';
 import Setting from "../Screens/User/SettingScreen";
+import RegistrationPage from "../Screens/RegistrationPage";
+import Destinations from "../Screens/User/Destinations/Destinations";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -57,12 +59,14 @@ function Navigation() {
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="RegistrationPage" component={RegistrationPage}/>
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         <Stack.Screen name="CurrentAnimal" component={CurrentAnimal} screenOptions={{headerShown: false}}/>
         <Stack.Screen name="Quizzes" component={Quizzes} screenOptions={{headerShown: false}}/>
         <Stack.Screen name="QuizResult" component={QuizResult} screenOptions={{headerShown: false}}/>
         <Stack.Screen name="QuizHome" component={QuizHome} screenOptions={{headerShown: false}}/>
         <Stack.Screen name="Setting" component={Setting} screenOptions={{headerShown: false}}/>
+        <Stack.Screen name="Destinations" component={Destinations} screenOptions={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

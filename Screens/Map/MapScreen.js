@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MapView from "react-native-maps";
 
 // import Mapbox from '@rnmapbox/maps';
@@ -10,6 +10,7 @@ import MapView from "react-native-maps";
 export default function MapScreen ({navigation}){
   return (
     <View style={styles.page}>
+      <TouchableOpacity style = {{paddingTop: "4%", height: "15%", width: "7%", backgroundColor: "black"}} onPress={() => navigation.navigate('Destinations')}/>
       <View style={styles.container}>
         <MapView style={styles.map} />
       </View>
