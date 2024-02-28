@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "maptest",
+    "slug": "maptest",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.solnyshko3622.maptest"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.solnyshko3622.maptest"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsVersion": "10.16.2",
+          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoiYWxvaGFrdWlubyIsImEiOiJjbHQ0NWExNnExZHkwMmtyem1pNTc0dWI5In0.8ez9w40n4jCrFGWjbeKarg"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cf799257-7d0d-4547-abd3-4b7fb2181c1c"
+      }
+    },
+    "owner": "kislosladky"
+  }
+}
