@@ -8,9 +8,8 @@ import {
   TouchableOpacity,
   Alert,
   Image,
-  View, TouchableWithoutFeedback
+  View,
 } from 'react-native';
-import {Icon} from "react-native-vector-icons";
 import {Ionicons} from "@expo/vector-icons";
 
 
@@ -85,34 +84,6 @@ const Achivments = [
   },
 ];
 
-
-// const Paths = [
-//   {
-//     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-//     title: 'Зоопарк за час',
-//     img: require("../../assets/Paths1.png")
-//   },
-//   {
-//     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-//     title: 'Зоопарк без аттракционов',
-//     img: require("../../assets/Paths2.png")
-//   },
-//   {
-//     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-//     title: 'И что-то ещё',
-//     img: require("../../assets/Paths3.png")
-//   },
-// ];
-
-const Item = (props) => (
-  <TouchableOpacity  activeOpacity={0.9} style={{height: 170, width: 270, margin: 10, borderRadius: 20, marginTop:'20%'}}>
-    <ImageBackground source={props.img} style={{width: 270, height: 170}}>
-      <Text style={{fontFamily: 'monserratBold', fontSize: 25, marginLeft: 20, marginTop: 20, marginRight: 20}} onPress={() => Alert.alert(props.title, props.descriptions,
-        [{text: "Пройти квиз", onPress: () => props.navigation.navigate("Home")}, {text: "Выбрать другой"}])}>{props.title}</Text>
-    </ImageBackground>
-  </TouchableOpacity>
-);
-
 const AchivementsItem = (props) => (
   <TouchableOpacity activeOpacity={0.9} style={{height: 170, width: 270, margin: 10, borderRadius: 20, elevation: 5}} onPress={() => Alert.alert(props.title, props.description)}>
     <ImageBackground source={props.img} style={{width: 270, height: 170}}>
@@ -173,15 +144,6 @@ function UserMainScreen({navigation})  {
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
           />
-          {/*<Text style={{marginTop: "7%", marginBottom: "7%", marginLeft: "5%"}}>Лист посещения</Text>*/}
-          {/*<FlatList*/}
-          {/*  data={Paths}*/}
-          {/*  alwaysBounceHorizontal={true}*/}
-          {/*  renderItem={({item}) => <Item title={item.title} img = {item.img}/>}*/}
-          {/*  keyExtractor={item => item.id}*/}
-          {/*  horizontal = {true}*/}
-          {/*  showsHorizontalScrollIndicator={false}*/}
-          {/*/>*/}
         </ScrollView>
     </SafeAreaView>
     </ImageBackground>

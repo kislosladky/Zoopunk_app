@@ -175,43 +175,4 @@ const styles = StyleSheet.create({
         elevation: 10,
     }
 });
-// export default Quizz
-//
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         paddingTop: StatusBar.currentHeight,
-//         marginHorizontal: 16,
-//         height: '100%',
-//
-//     },
-//     question: {
-//         width: '100%',
-//         height: '30%',
-//         marginVertical: 16,
-//         backgroundColor: '#fff',
-//         fontSize: 32,
-//         borderRadius: 20,
-//         paddingHorizontal: 10,
-//         paddingVertical: 6,
-//         overflow: 'scroll',
-//     },
-//     questionText: {
-//         fontSize: 32,
-//     },
-//     option:{
-//         fontSize: 24,
-//     },
-//     optionButt:{
-//         marginVertical: 6,
-//         paddingVertical: 12,
-//         backgroundColor: '#F19999',
-//         borderRadius: 20,
-//         paddingHorizontal: 10,
-//     },
-//     options: {
-//         marginVertical: 16,
-//         flex: 1,
-//     }
-//
-// });
+

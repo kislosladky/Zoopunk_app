@@ -1,18 +1,18 @@
 import React from 'react';
 
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import MapView from "react-native-maps";
-
-// import Mapbox from '@rnmapbox/maps';
-//
-// Mapbox.setAccessToken('sk.eyJ1Ijoic29sbnlzaGtvMzYyMiIsImEiOiJjbHB0amJpYjkwZnV1MmxvcDBxcmhubTZ2In0.pUpnMiKX71UHvcoJezms1w');
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function MapScreen ({navigation}){
   return (
     <View style={styles.page}>
-      <TouchableOpacity style = {{paddingTop: "4%", height: "15%", width: "7%", backgroundColor: "black"}} onPress={() => navigation.navigate('Destinations')}/>
       <View style={styles.container}>
-        <MapView style={styles.map} />
+        <MapView style={styles.map}>
+          <TouchableOpacity style = {styles.button} onPress={() => navigation.navigate('Destinations')}>
+            <MaterialCommunityIcons name="map-marker-path" size={36} color="green" style={{alignSelf: "center"}}/>
+          </TouchableOpacity>
+        </MapView>
       </View>
     </View>
   );
@@ -24,6 +24,14 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 
+  button: {
+    width: '15%',
+    height: '7%',
+    backgroundColor: "#ffffff",
+    borderRadius: "20%",
+    marginTop: "7%",
+    marginLeft: "83%",
+  },
   page: {
     flex: 1,
 

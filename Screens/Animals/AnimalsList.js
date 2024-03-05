@@ -4,7 +4,7 @@ import {
     Text,
     ImageBackground,
     FlatList,
-    TouchableOpacity, Image, View, TextInput, Dimensions, Keyboard, Alert, Button,
+    TouchableOpacity, Image, View, TextInput, Dimensions, Keyboard, Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     backGround:{
-        // position: 'absolute',
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height + 30,
         backgroundColor:"white",
@@ -127,7 +126,6 @@ const styles = StyleSheet.create({
     flatlistItems: {
         marginBottom: Dimensions.get('window').width * 0.25,
         backgroundColor:"rgba(0,100,0)",
-        // Dimensions.get('window').width,
         paddingBottom: Dimensions.get('window').width * 0.24,
 
     },

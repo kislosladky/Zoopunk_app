@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import {ImageStyles} from "../../Styles/ImageStyles";
 import React from "react";
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 // const photos = ['https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fennec_Fox_Vulpes_zerda.jpg/275px-Fennec_Fox_Vulpes_zerda.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fennec_Fox_Vulpes_zerda.jpg/275px-Fennec_Fox_Vulpes_zerda.jpg']
 export default function CurrentAnimalScreen({ route }) {

@@ -82,7 +82,3 @@ export default function RegistrationPage ({navigation}){
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-
-});
